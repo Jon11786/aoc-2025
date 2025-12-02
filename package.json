@@ -4,10 +4,11 @@
   "description": "",
   "scripts": {
     "format": "prettier --write .",
-    "day": "ts-node src/index.ts"
+    "day": "ts-node src/index.ts",
+    "gen": "ts-node scripts/gen-day.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jonathan Hughes",
   "license": "ISC",
   "packageManager": "pnpm@10.22.0",
   "devDependencies": {
