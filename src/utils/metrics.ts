@@ -32,7 +32,18 @@ export function printMetrics<T>({
   memoryDiff,
 }: MetricsResult<T>) {
   const kb = memoryDiff / 1024;
-  console.log(
-    `${label}: ${result}  |  time: ${ms.toFixed(3)} ms  |  Δheap: ${kb.toFixed(1)} KB`,
-  );
+  // ANSI color helpers
+  const reset = "\u001b[0m";
+  const bold = "\u001b[1m";
+  const dim = "\u001b[2m";
+  const cyan = "\u001b[36m";
+  const green = "\u001b[32m";
+  const yellow = "\u001b[33m";
+
+  const labelStr = `${bold}${cyan}${label}${reset}`;
+  const resultStr = `${bold}${green}${result}${reset}`;
+  const timeStr = `${dim}time:${reset} ${yellow}${ms.toFixed(3)} ms${reset}`;
+  const memStr = `${dim}Δheap:${reset} ${yellow}${kb.toFixed(1)} KB${reset}`;
+
+  console.log(`${labelStr}: ${resultStr}  |  ${timeStr}  |  ${memStr}`);
 }
