@@ -6,19 +6,19 @@ This repository contains solutions for Advent of Code 2025, implemented in TypeS
 
 ```
 src/
-  index.ts           # Entry point for running solutions
-  days/              # Individual day solutions (01/handler.ts, 02/handler.ts, ...)
-  utils/             # Utility modules for input parsing and helpers
+  index.ts           # CLI runner (pnpm day <day> [part] [example|real])
+  days/              # Day folders (01/, 02/, ...) each with handler.ts, input.txt, example.txt
+  utils/             # Shared utilities
+scripts/
+  gen-day.ts         # Scaffold a new day (pnpm gen <day>)
 ```
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (recommended v24+)
-- [pnpm](https://pnpm.io/) (used as the package manager)
+- Node.js (recommended v24+)
+- pnpm
 
 ## Installation
-
-Clone the repository and install dependencies:
 
 ```sh
 pnpm install
@@ -26,29 +26,26 @@ pnpm install
 
 ## Usage
 
-### Run a Day's Solution
-
-To run a specific day's solution (e.g., Day 1):
+### Run a Day
 
 ```sh
-pnpm day 1
+pnpm day 1          # Run both parts on real input
+pnpm day 1 example  # Run both parts on example input
+pnpm day 2 2        # Run only part 2 (real input)
+pnpm day 2 1 example # Run part 1 with example input
 ```
 
-To run a specific day's part solution (e.g., Day 1 part 2):
+### Scaffold a New Day
+
+Creates `src/days/DD/` with handler.ts, example.txt, input.txt.
 
 ```sh
-pnpm day 1 2
+pnpm gen 4
 ```
 
-To run a specific day's part with example data (e.g., Day 2 part 2 with example data):
-
-```sh
-pnpm day 2 2 example
-```
+Then edit `src/days/04/handler.ts` to implement `part1`, and `part2`.
 
 ### Format Code
-
-To format all code using Prettier:
 
 ```sh
 pnpm format
