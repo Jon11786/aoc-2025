@@ -7,8 +7,7 @@ This repository contains solutions for Advent of Code 2025, implemented in TypeS
 ```
 src/
   index.ts           # Entry point for running solutions
-  days/              # Individual day solutions (day01.ts, day02.ts, ...)
-  inputs/            # Input files for each day (example and actual)
+  days/              # Individual day solutions (01/handler.ts, 02/handler.ts, ...)
   utils/             # Utility modules for input parsing and helpers
 ```
 

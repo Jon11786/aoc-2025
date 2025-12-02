@@ -1,5 +1,5 @@
-import { lines } from "../utils/lines";
-import { RingBuffer } from "../utils/ring";
+import { lines } from "../../utils/lines";
+import { RingBuffer } from "../../utils/ring";
 
 // Count each 0
 export function part1(raw: string): number {

@@ -1,4 +1,4 @@
-import { linesByComma } from "../utils/lines";
+import { linesByComma } from "../../utils/lines";
 
 export function part1(raw: string): number {
   let count = 0;

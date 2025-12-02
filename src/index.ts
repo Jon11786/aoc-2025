@@ -17,7 +17,7 @@ async function main() {
   const dayStr = day.toString().padStart(2, "0");
   const variant = variantArg === "example" ? "example" : "real";
 
-  const modulePath = `./days/day${dayStr}`;
+  const modulePath = `./days/${dayStr}/handler`;
   const imported = await import(modulePath);
   const input = readInput(day, variant);
 
